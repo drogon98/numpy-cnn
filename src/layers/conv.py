@@ -75,12 +75,14 @@ class ConvLayer(object):
 
         
         if save_cache:
+            # Save for back propagation
             self.cache["A"] = X
 
         return Z_output
 
     
     def back_propagate(self,dZ):
+        # A layer has its activations
         A = self.cache["A"]
         filter_h,filter_w = self.params.get("kernel")
         pad_h,pad_w = self.params.get("pad_h"),self.params.get("pad_w")
