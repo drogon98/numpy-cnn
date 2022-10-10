@@ -3,6 +3,8 @@ import numpy as np
 
 from os import path,makedirs,remove
 
+from utilities.settings import get_layer_num, inc_layer_num
+
 
 
 class Layer(object):
@@ -22,14 +24,17 @@ class Layer(object):
         }
         save_path = path.join(dump_path,f"{self.name}.pickle")
         makedirs(path.dirname(save_path),exist_ok=True)
-        remove(save_path)
+        # remove(save_path)
         with open(save_path,"wb") as d:
             pickle.dump(dump_cache,d)
 
     
     def load_weights(self,dump_path):
-        if self.name == None:
-            self.name="conv"
+        if self.name is None:
+            self.name = '{}_{}'.format(self.type, get_layer_num(self.type))
+            inc_layer_num(self.type)
+
+            
         read_path = path.join(dump_path, self.name+'.pickle')
         with open(read_path, 'rb') as r:
             dump_cache = pickle.load(r)
