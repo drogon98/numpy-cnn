@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class CategoricalCrossEntropy:
     @staticmethod
     def compute_loss(labels, predictions, epsilon=1e-8):

@@ -1,9 +1,9 @@
 import pickle
-import numpy as np
 from os import path
 
-from utilities.utils import to_categorical
+import numpy as np
 
+from utilities.utils import to_categorical
 
 TOTAL_BATCHES= 5
 NUM_CLASSES = 10

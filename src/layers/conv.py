@@ -1,9 +1,9 @@
-import numpy as np
 import pickle
+from os import makedirs, path, remove
 
-from os import path,makedirs,remove
+import numpy as np
+
 from layers.base import Layer
-
 from utilities.initializers import glorot_uniform
 from utilities.settings import get_layer_num, inc_layer_num
 from utilities.utils import pad_inputs

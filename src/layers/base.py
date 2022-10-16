@@ -1,10 +1,9 @@
 import pickle
+from os import makedirs, path, remove
+
 import numpy as np
 
-from os import path,makedirs,remove
-
 from utilities.settings import get_layer_num, inc_layer_num
-
 
 
 class Layer(object):

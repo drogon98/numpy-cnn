@@ -1,5 +1,6 @@
 import numpy as np
 
+
 class Relu(object):
     
 
@@ -9,6 +10,9 @@ class Relu(object):
 
     def has_weights(self):
         return self.has_units
+
+    def __str__(self) -> str:
+        return "relu layer"
 
     def forward_propagate(self,Z,save_cache=False):
         if save_cache:
@@ -27,6 +31,9 @@ class Softmax:
 
     def has_weights(self):
         return self.has_units
+
+    def __str__(self) -> str:
+        return "softmax layer"
 
     def forward_propagate(self, Z, save_cache=False):
         if save_cache:
